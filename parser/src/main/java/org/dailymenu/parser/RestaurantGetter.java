@@ -57,12 +57,9 @@ public abstract class RestaurantGetter implements ClassParserProvider {
         URLConnection connection = getConnection();
         BufferedReader is = new BufferedReader(new InputStreamReader((InputStream) connection.getContent(), getCharset()));
         String line;
-        System.out.println("Food start ------------");
         while ((line = is.readLine()) != null) {
             sb.append(line);
-            System.out.println(line);
         }
-        System.out.println("Food end -------------");
         return stripImages() ? stripImages(sb.toString()) : sb.toString();
     }
 

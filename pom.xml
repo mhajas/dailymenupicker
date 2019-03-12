@@ -10,7 +10,6 @@
     <packaging>pom</packaging>
 
     <modules>
-        <module>persistence</module>
         <module>parser</module>
         <module>parser-public-spi</module>
         <module>services</module>
