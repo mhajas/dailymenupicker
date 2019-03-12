@@ -20,7 +20,7 @@ public class Purkynka extends DailyMenuParser {
 
     private static Pattern FOOD_PATTERN = Pattern.compile("(.*) (\\d+)");
 
-    private Restaurant restaurant = new Restaurant("ChIJPXicBQGUEkcRekvBH8TMQkQ", "Purkyňka", true);
+    private Restaurant restaurant = new Restaurant("ChIJD55B_ASUEkcRgoFJeL_VJjE", "Purkyňka", true);
 
     protected String getUrl() {
         return "http://www.napurkynce.cz/denni-menu/";

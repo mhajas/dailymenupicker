@@ -97,7 +97,7 @@ public abstract class ZomatoRestaurantGetter extends RestaurantGetter {
 
         List<String> split = Arrays.asList(menuString.split("</tr>"));
 
-        String soupName = compileAndGet("<td>[^\\s.]*([^<^:.]*)</td>", split.get(0));
+        String soupName = compileAndGet("<td>([^<.]*)</td>", split.get(0));
         FoodEntity soup = new FoodEntity();
         soup.setName(soupName.trim());
 
