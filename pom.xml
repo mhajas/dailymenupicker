@@ -18,6 +18,8 @@
 
     <properties>
         <resteasy.version>3.6.3.Final</resteasy.version>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
     </properties>
     <dependencyManagement>
         <dependencies>
