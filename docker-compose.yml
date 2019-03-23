@@ -1,0 +1,8 @@
+version: '3.7'
+services:
+  restapi:
+    build: ./services
+    env_file:
+      - dailymenu-picker-env.env
+    ports:
+      - "8080:8080"

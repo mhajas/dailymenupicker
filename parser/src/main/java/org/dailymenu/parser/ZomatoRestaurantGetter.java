@@ -1,5 +1,6 @@
 package org.dailymenu.parser;
 
+import lombok.extern.slf4j.Slf4j;
 import org.dailymenu.entity.food.FoodEntity;
 import org.dailymenu.entity.food.Restaurant;
 import org.dailymenu.entity.food.RestaurantDailyData;
@@ -19,7 +20,7 @@ import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-
+@Slf4j
 public abstract class ZomatoRestaurantGetter extends RestaurantGetter {
 
     private static Pattern FOOD_PATTERN = Pattern.compile("<td>\\d?\\.?[abc]?\\)?(.*)</td>.*<td>(\\d+)");
@@ -41,7 +42,9 @@ public abstract class ZomatoRestaurantGetter extends RestaurantGetter {
     }
 
     protected String getZomatoAPIKey() {
-        return System.getenv("ZOMATO_API_KEY");
+        String key = System.getenv("ZOMATO_API_KEY");
+        log.info("Zomato API key is {}", key);
+        return key;
     }
 
     @Override
