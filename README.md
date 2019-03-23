@@ -29,6 +29,8 @@ After that, run
 
 `docker-compose up`
 
+In this case it is also possible to remotely debug application. Just attach you remote debugger (for example from intellij) on port 5005.
+
 ---
 
 If you want more digging, you can do it manually:
