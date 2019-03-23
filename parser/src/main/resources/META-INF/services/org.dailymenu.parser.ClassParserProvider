@@ -1,5 +1,5 @@
-org.dailymenu.parser.Purkynka
-org.dailymenu.parser.Rebio
-org.dailymenu.parser.Portoriko
-org.dailymenu.parser.Kotelna
-org.dailymenu.parser.LiquidBread
+org.dailymenu.parser.manual.Purkynka
+org.dailymenu.parser.manual.Rebio
+org.dailymenu.parser.manual.Portoriko
+org.dailymenu.parser.manual.Kotelna
+org.dailymenu.parser.manual.LiquidBread

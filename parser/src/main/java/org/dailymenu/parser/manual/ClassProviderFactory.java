@@ -1,4 +1,8 @@
-package org.dailymenu.parser;
+package org.dailymenu.parser.manual;
+
+import org.dailymenu.parser.ClassParserProvider;
+import org.dailymenu.parser.ParserProvider;
+import org.dailymenu.parser.ParserProviderFactory;
 
 import java.util.HashMap;
 import java.util.Map;

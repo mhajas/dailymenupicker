@@ -1,4 +1,4 @@
-package org.dailymenu.parser;
+package org.dailymenu.parser.manual;
 
 import lombok.extern.slf4j.Slf4j;
 import org.dailymenu.entity.food.FoodEntity;

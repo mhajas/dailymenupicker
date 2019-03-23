@@ -1,4 +1,6 @@
-package org.dailymenu.parser;
+package org.dailymenu.parser.manual;
+
+import org.dailymenu.parser.ClassParserProvider;
 
 import java.io.BufferedReader;
 import java.io.IOException;

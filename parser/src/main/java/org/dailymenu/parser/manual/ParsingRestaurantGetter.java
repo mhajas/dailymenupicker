@@ -1,4 +1,4 @@
-package org.dailymenu.parser;
+package org.dailymenu.parser.manual;
 
 import java.io.IOException;
 import java.text.ParseException;

@@ -1,4 +1,4 @@
-package org.dailymenu.parser;
+package org.dailymenu.parser.manual;
 
 public class Main {
 

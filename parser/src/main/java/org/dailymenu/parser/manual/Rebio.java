@@ -1,4 +1,4 @@
-package org.dailymenu.parser;
+package org.dailymenu.parser.manual;
 
 import org.apache.pdfbox.pdfparser.PDFParser;
 import org.apache.pdfbox.pdmodel.PDDocument;
@@ -8,7 +8,6 @@ import org.dailymenu.entity.food.Restaurant;
 import org.dailymenu.entity.food.RestaurantDailyData;
 import org.dailymenu.entity.food.RestaurantWeekData;
 
-import javax.servlet.annotation.WebServlet;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;

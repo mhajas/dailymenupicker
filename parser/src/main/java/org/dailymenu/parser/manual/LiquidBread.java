@@ -1,18 +1,17 @@
-package org.dailymenu.parser;
+package org.dailymenu.parser.manual;
 
 import org.dailymenu.entity.food.Restaurant;
 
 /**
- * Servlet implementation class Kotelna
+ * Servlet implementation class Liquid Bread
  */
-@SuppressWarnings("serial")
-public class Kotelna extends ZomatoRestaurantGetter {
+public class LiquidBread extends ZomatoRestaurantGetter {
 
-    private Restaurant restaurant = new Restaurant("ChIJrdw1hgCUEkcRRPnwnBsXDfc", "U Kotelny", true);
+    private Restaurant restaurant = new Restaurant("ChIJ3VMlLwWUEkcRiEOim7E_5ks", "Liquid Bread", true);
 
     @Override
     protected String getZomatoId() {
-        return "16506016";
+    	return "18599936";
     }
 
     @Override

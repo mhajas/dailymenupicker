@@ -1,6 +1,4 @@
-package org.dailymenu.parser;
-
-import org.dailymenu.parser.ParsingRestaurantGetter;
+package org.dailymenu.parser.manual;
 
 import java.util.Calendar;
 
