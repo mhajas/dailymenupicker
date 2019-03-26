@@ -11,5 +11,12 @@
 
     <artifactId>parser-public-spi</artifactId>
 
+    <dependencies>
+        <dependency>
+            <groupId>com.scalified</groupId>
+            <artifactId>tree</artifactId>
+            <version>0.2.5</version>
+        </dependency>
+    </dependencies>
 
 </project>

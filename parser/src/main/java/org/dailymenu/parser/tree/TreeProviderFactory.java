@@ -1,23 +1,23 @@
-package org.dailymenu.parser.manual;
+package org.dailymenu.parser.tree;
 
-import org.dailymenu.parser.ClassParserProvider;
 import org.dailymenu.parser.ParserProvider;
 import org.dailymenu.parser.ParserProviderFactory;
+import org.dailymenu.parser.TreeParserProvider;
 
 import java.util.HashMap;
 import java.util.Map;
 import java.util.ServiceLoader;
 
-public class ClassProviderFactory implements ParserProviderFactory {
+public class TreeProviderFactory implements ParserProviderFactory {
 
-    private static ServiceLoader<ClassParserProvider> loader = ServiceLoader
-            .load(ClassParserProvider.class);
+    private static ServiceLoader<TreeParserProvider> loader = ServiceLoader
+            .load(TreeParserProvider.class);
 
-    private static Map<String, ClassParserProvider> providers = new HashMap<>();
+    private static Map<String, TreeParserProvider> providers = new HashMap<>();
 
     @Override
     public void init() {
-        loader.iterator().forEachRemaining(provider -> providers.put(provider.getGoogleId(), provider));
+        loader.iterator().forEachRemaining(provider -> providers.put(provider.getRestaurant().getGoogleId(), provider));
     }
 
     @Override
@@ -32,6 +32,6 @@ public class ClassProviderFactory implements ParserProviderFactory {
 
     @Override
     public int priority() {
-        return 20;
+        return 100;
     }
 }

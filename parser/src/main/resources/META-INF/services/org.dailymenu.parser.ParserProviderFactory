@@ -1,1 +1,2 @@
 org.dailymenu.parser.manual.ClassProviderFactory
+org.dailymenu.parser.tree.TreeProviderFactory

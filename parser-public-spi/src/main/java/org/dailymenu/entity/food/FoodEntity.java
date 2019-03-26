@@ -65,4 +65,9 @@ public class FoodEntity {
                 ", tags=" + tags +
                 '}';
     }
+
+    public String getFormattedMenu() {
+
+        return name + ((price == null || price == 0) ? "" : " " + price + " CZK");
+    }
 }

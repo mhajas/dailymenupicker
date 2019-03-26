@@ -4,6 +4,7 @@ import org.dailymenu.parser.ParserProvider;
 import org.dailymenu.parser.ParserProviderFactory;
 
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import java.util.ServiceLoader;
 import java.util.stream.Collectors;
@@ -24,8 +25,9 @@ public class MultiFactoryParserService implements ParserService {
             parserProviderFactory.init();
             factories.add(parserProviderFactory);
         });
-    }
 
+        Collections.sort(factories);
+    }
 
     @Override
     public ParserProvider getParserProvider(String googleId) {
