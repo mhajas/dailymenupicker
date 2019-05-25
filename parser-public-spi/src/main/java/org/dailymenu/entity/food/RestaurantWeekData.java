@@ -78,4 +78,17 @@ public class RestaurantWeekData {
                 ", menuForDays=" + menuForDays +
                 '}';
     }
+
+    public String toFormattedMenu() {
+        StringBuilder b = new StringBuilder();
+
+        b.append("Menu for restaurant: ").append(restaurant.getName()).append("\n")
+        .append("Week number: ").append(weekNumber).append('\n');
+
+        for (RestaurantDailyData dailyData : getMenuForDays()) {
+            b.append(dailyData.getFormattedMenu()).append('\n');
+        }
+
+        return b.toString();
+    }
 }

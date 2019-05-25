@@ -4,7 +4,7 @@ package org.dailymenu.parser;
  * Interface for factories which is able to create provider for restaurant specified by googleId
  *
  */
-public interface ParserProviderFactory {
+public interface ParserProviderFactory extends Comparable<ParserProviderFactory> {
 
     /**
      * Init function is called when creating each ParserProviderFactory
@@ -26,4 +26,14 @@ public interface ParserProviderFactory {
      * @return true if this factory can provide ParserProvider for @googleId, false otherwise
      */
     boolean canProvide(String googleId);
+
+    /**
+     * @return priority of ProviderFactory, higher priority means the provider will be chosen in case of more possible providers
+     */
+    int priority();
+
+    @Override
+    default int compareTo(ParserProviderFactory o) {
+        return Integer.compare(o.priority(), priority());
+    }
 }
