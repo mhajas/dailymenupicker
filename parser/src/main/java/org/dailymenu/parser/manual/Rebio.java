@@ -121,7 +121,7 @@ public class Rebio extends ParsingRestaurantGetter {
 
         RestaurantWeekData restaurantWeekData = new RestaurantWeekData();
         restaurantWeekData.setRestaurant(restaurant);
-        restaurantWeekData.setSoupIncludedInPrice(restaurant.isSoupIncludedInPrice());
+        //restaurantWeekData.setSoupIncludedInPrice(restaurant.isSoupIncludedInPrice());
         restaurantWeekData.setWeekNumber(getWeekNumber());
 
         List<String> split = Arrays.asList(menuString.split("\n"));

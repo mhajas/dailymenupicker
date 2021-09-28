@@ -2,15 +2,16 @@ package org.dailymenu.entity.food;
 
 import java.util.Date;
 import java.util.HashSet;
+import java.util.LinkedHashSet;
 import java.util.Set;
 
 public class RestaurantDailyData {
 
     private Date dateOfMenu;
 
-    private Set<FoodEntity> menu = new HashSet<>();
+    private Set<FoodEntity> menu = new LinkedHashSet<>();
 
-    private Set<FoodEntity> soup = new HashSet<>();
+    private Set<FoodEntity> soup = new LinkedHashSet<>();
 
 
     public Set<FoodEntity> getMenu() {

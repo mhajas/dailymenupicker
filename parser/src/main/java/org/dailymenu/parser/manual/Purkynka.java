@@ -57,7 +57,7 @@ public class Purkynka extends DailyMenuParser {
 
         RestaurantWeekData restaurantWeekData = new RestaurantWeekData();
         restaurantWeekData.setRestaurant(restaurant);
-        restaurantWeekData.setSoupIncludedInPrice(restaurant.isSoupIncludedInPrice());
+        //restaurantWeekData.setSoupIncludedInPrice(restaurant.isSoupIncludedInPrice());
         restaurantWeekData.setWeekNumber(getWeekNumber());
 
         List<String> split = Arrays.asList(menuString.split("</div>"));

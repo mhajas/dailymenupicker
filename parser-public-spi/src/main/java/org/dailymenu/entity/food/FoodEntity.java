@@ -1,5 +1,6 @@
 package org.dailymenu.entity.food;
 
+import java.util.EnumSet;
 import java.util.Set;
 
 public class FoodEntity {
@@ -8,7 +9,7 @@ public class FoodEntity {
 
     private Integer price;
 
-    private Set<Ingredient> tags;
+    private Set<Ingredient> tags = EnumSet.noneOf(Ingredient.class);
 
     public FoodEntity() {
     }
@@ -34,7 +35,11 @@ public class FoodEntity {
     }
 
     public void setTags(Set<Ingredient> tags) {
-        this.tags = tags;
+        this.tags.addAll(tags);
+    }
+
+    public void addTag(Ingredient tag) {
+        this.tags.add(tag);
     }
 
     @Override

@@ -1,11 +1,11 @@
 package org.dailymenu.entity.food;
 
+import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+
 import java.util.ArrayList;
 import java.util.List;
 
 public class RestaurantWeekData {
-
-    private boolean soupIncludedInPrice;
 
     private int weekNumber;
 
@@ -13,12 +13,9 @@ public class RestaurantWeekData {
 
     private List<RestaurantDailyData> menuForDays = new ArrayList<>();
 
+    @JsonSerialize
     public boolean isSoupIncludedInPrice() {
-        return soupIncludedInPrice;
-    }
-
-    public void setSoupIncludedInPrice(boolean soupIncludedInPrice) {
-        this.soupIncludedInPrice = soupIncludedInPrice;
+        return restaurant.isSoupIncludedInPrice();
     }
 
     public int getWeekNumber() {
@@ -72,7 +69,7 @@ public class RestaurantWeekData {
     @Override
     public String toString() {
         return "RestaurantWeekData{" +
-                "soupIncludedInPrice=" + soupIncludedInPrice +
+                "soupIncludedInPrice=" + restaurant.isSoupIncludedInPrice() +
                 ", weekNumber=" + weekNumber +
                 ", restaurant=" + ((restaurant==null) ? null : restaurant.getName()) +
                 ", menuForDays=" + menuForDays +
