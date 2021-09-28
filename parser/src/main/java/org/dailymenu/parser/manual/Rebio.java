@@ -1,8 +1,9 @@
 package org.dailymenu.parser.manual;
 
+import org.apache.pdfbox.io.RandomAccessBuffer;
 import org.apache.pdfbox.pdfparser.PDFParser;
 import org.apache.pdfbox.pdmodel.PDDocument;
-import org.apache.pdfbox.util.PDFTextStripper;
+import org.apache.pdfbox.text.PDFTextStripper;
 import org.dailymenu.entity.food.FoodEntity;
 import org.dailymenu.entity.food.Restaurant;
 import org.dailymenu.entity.food.RestaurantDailyData;
@@ -69,7 +70,7 @@ public class Rebio extends ParsingRestaurantGetter {
         try {
             StringBuffer result = new StringBuffer();
             URL url = new URL(getUrl());
-            PDFParser parser = new PDFParser((InputStream) url.getContent());
+            PDFParser parser = new PDFParser(new RandomAccessBuffer((InputStream) url.getContent()));
             parser.parse();
             PDFTextStripper stripper = new PDFTextStripper();
             stripper.setSortByPosition(true);
