@@ -2,71 +2,78 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-    <groupId>org.dailymenu-picker</groupId>
-    <version>1.0.0-SNAPSHOT</version>
+
+    <parent>
+        <artifactId>dailymenu-picker-parent</artifactId>
+        <groupId>org.dailymenu-picker</groupId>
+        <version>1.0-SNAPSHOT</version>
+    </parent>
+
     <name>Daily menu services</name>
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>services</artifactId>
-    <packaging>war</packaging>
 
     <properties>
-        <version.thorntail>2.4.0.Final</version.thorntail>
-        <maven.compiler.source>1.8</maven.compiler.source>
-        <maven.compiler.target>1.8</maven.compiler.target>
-        <failOnMissingWebXml>false</failOnMissingWebXml>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <maven.compiler.source>11</maven.compiler.source>
+        <maven.compiler.target>11</maven.compiler.target>
     </properties>
 
-    <dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>io.thorntail</groupId>
-                <artifactId>bom-all</artifactId>
-                <version>${version.thorntail}</version>
-                <scope>import</scope>
-                <type>pom</type>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
+    <dependencies>
+        <dependency>
+            <groupId>org.dailymenu-picker</groupId>
+            <artifactId>parser</artifactId>
+            <version>${project.version}</version>
+        </dependency>
 
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-resteasy</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-smallrye-openapi</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-swagger-ui</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-arc</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+        <dependency>
+            <groupId>io.quarkus</groupId>
+            <artifactId>quarkus-resteasy-jsonb</artifactId>
+            <scope>provided</scope>
+        </dependency>
+
+    </dependencies>
 
     <build>
-        <finalName>dailymenu-services</finalName>
         <plugins>
             <plugin>
-                <groupId>io.thorntail</groupId>
-                <artifactId>thorntail-maven-plugin</artifactId>
-                <version>${version.thorntail}</version>
-                <configuration>
-                    <properties>
-                        <!--Needs for local docker image exception-->
-                        <java.net.preferIPv4Stack>true</java.net.preferIPv4Stack>
-                    </properties>
-                </configuration>
+                <groupId>org.jboss.jandex</groupId>
+                <artifactId>jandex-maven-plugin</artifactId>
+                <version>1.1.0</version>
                 <executions>
                     <execution>
+                        <id>make-index</id>
                         <goals>
-                            <goal>package</goal>
+                            <goal>jandex</goal>
                         </goals>
                     </execution>
                 </executions>
             </plugin>
         </plugins>
     </build>
-
-    <dependencies>
-        <dependency>
-            <groupId>io.thorntail</groupId>
-            <artifactId>microprofile</artifactId>
-            <version>${version.thorntail}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.dailymenu-picker</groupId>
-            <artifactId>parser</artifactId>
-            <version>1.0-SNAPSHOT</version>
-        </dependency>
-    </dependencies>
 
 </project>
