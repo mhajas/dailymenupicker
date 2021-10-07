@@ -39,10 +39,12 @@ public class WeekMenuBuilder {
             return this;
         }
 
+        public boolean hasFood() {
+            return day.getMenu().size() > 0;
+        }
+
         public DailyMenuBuilder date(LocalDate localDate) {
-                day.setDateOfMenu(java.util.Date.from(localDate.atStartOfDay()
-                        .atZone(ZoneId.systemDefault())
-                        .toInstant()));
+                day.setDateOfMenu(java.util.Date.from(localDate.atStartOfDay(ZoneId.of("GMT")).toInstant()));
 
                 return this;
         }

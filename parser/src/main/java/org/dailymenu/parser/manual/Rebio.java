@@ -8,6 +8,7 @@ import org.dailymenu.entity.food.FoodEntity;
 import org.dailymenu.entity.food.Restaurant;
 import org.dailymenu.entity.food.RestaurantDailyData;
 import org.dailymenu.entity.food.RestaurantWeekData;
+import org.dailymenu.parser.manual.time.TimeUtils;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -102,7 +103,7 @@ public class Rebio extends ParsingRestaurantGetter {
     }
 
     private int getWeekNumber() {
-        Calendar cal = Calendar.getInstance();
+        Calendar cal = TimeUtils.getCalendar();
         return cal.get(Calendar.WEEK_OF_YEAR);
     }
 
@@ -169,7 +170,7 @@ public class Rebio extends ParsingRestaurantGetter {
         }
 
         for (int i = 0; i < 5; i++) {
-            if (i == Calendar.getInstance().get(Calendar.DAY_OF_WEEK) - 2) {
+            if (i == TimeUtils.getCalendar().get(Calendar.DAY_OF_WEEK) - 2) {
                 restaurantWeekData.addMenuForDay(dailyData);
             } else {
                 restaurantWeekData.addMenuForDay(null);

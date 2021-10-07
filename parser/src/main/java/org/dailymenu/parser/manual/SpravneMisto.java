@@ -8,6 +8,7 @@ import org.dailymenu.entity.food.Restaurant;
 import org.dailymenu.entity.food.RestaurantWeekData;
 import org.dailymenu.entity.food.WeekMenuBuilder;
 import org.dailymenu.parser.ClassParserProvider;
+import org.dailymenu.parser.manual.time.TimeUtils;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -102,7 +103,7 @@ public class SpravneMisto implements ClassParserProvider {
     }
 
     protected int getWeekNumber() {
-        Calendar cal = Calendar.getInstance();
+        Calendar cal = TimeUtils.getCalendar();
         return cal.get(Calendar.WEEK_OF_YEAR) - 1;
     }
 
@@ -134,7 +135,7 @@ public class SpravneMisto implements ClassParserProvider {
                     String dateText = dateElement.text().split(" ", 2)[1];
 
                     DateTimeFormatter formatter = DateTimeFormatter.ofPattern("d. M. yyyy");
-                    String year = String.valueOf(Calendar.getInstance().get(Calendar.YEAR));
+                    String year = String.valueOf(TimeUtils.getCalendar().get(Calendar.YEAR));
 
                     dailyMenuBuilder.date(LocalDate.parse(dateText + " " + year, formatter));
                 });

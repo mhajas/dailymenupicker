@@ -39,4 +39,9 @@ public class MultiFactoryParserService implements ParserService {
 
         return canProvide.get(0).create(googleId);
     }
+
+    @Override
+    public boolean hasProviderFor(String googleId) {
+        return factories.stream().anyMatch(f -> f.canProvide(googleId));
+    }
 }

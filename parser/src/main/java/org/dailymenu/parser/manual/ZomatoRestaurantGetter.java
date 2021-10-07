@@ -4,6 +4,7 @@ import org.dailymenu.entity.food.FoodEntity;
 import org.dailymenu.entity.food.Restaurant;
 import org.dailymenu.entity.food.RestaurantDailyData;
 import org.dailymenu.entity.food.RestaurantWeekData;
+import org.dailymenu.parser.manual.time.TimeUtils;
 
 import javax.json.Json;
 import javax.json.JsonArray;
@@ -71,7 +72,7 @@ public abstract class ZomatoRestaurantGetter extends RestaurantGetter {
     }
 
     private int getWeekNumber() {
-        Calendar cal = Calendar.getInstance();
+        Calendar cal = TimeUtils.getCalendar();
         return cal.get(Calendar.WEEK_OF_YEAR);
     }
 
@@ -118,7 +119,7 @@ public abstract class ZomatoRestaurantGetter extends RestaurantGetter {
 
 
         for (int i = 0; i < 5; i++) {
-            if (i == Calendar.getInstance().get(Calendar.DAY_OF_WEEK) - 2) {
+            if (i == TimeUtils.getCalendar().get(Calendar.DAY_OF_WEEK) - 2) {
                 restaurantWeekData.addMenuForDay(dailyData);
             } else {
                 restaurantWeekData.addMenuForDay(null);
